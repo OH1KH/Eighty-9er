@@ -152,6 +152,13 @@ Rigctld kuulumattomia komentoja ovat:
 
 -----------------------------------------------------------------------------------------------------------
 
+## Same in English 
+###### (nearly.. . hope so...)
+
+
+
+
+
 Translation based on translate.google.com  (fixed manually. You have been warned...).
 
 
@@ -293,6 +300,7 @@ Only long commands are "dump_caps" and "dump_state", but they are more or less "
 
 
 Not rigctld commands are:
+
 	Z 		cut off WiFi (note!! the connection is lost!)
 	H 		set WiFi maximum power (may be cause a "woodpecker" to band)
 	P 		set WiF minimum power. The default is the maximum pwr. if a "woodpecker" exist dropping power may help.
