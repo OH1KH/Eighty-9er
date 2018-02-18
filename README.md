@@ -79,7 +79,7 @@ Kaikki tarvittavat komponentit Forty, DDS, ESP,Arduino Nano, 7seg-näyttö, TDA7
 
 Näytöllä vilkkuu erillaisia tekstejä. Valinnat tehdään liitetyllä avainnusoasalla (2-vartinen). Myöntävä vastaus on kun molemmat padit painetaan pohjaan. Kieltävässä ei tehdä mitään, vain odotetaan seuraavaa kysymystä.
 Poikkeuksena on avainnuksen pisteen ja viivan paikan vaihto. Siihen vastataan painamalla se padi pohjaan josta halutaan pisteet. Tämä tallettuu eepromille yhdessä viimeksi käyteyn CW-nopeuden kanssa joten niitä ei tarvitse jokaisessa käynnistyksessä määrittää.
-
+```
     "F On" (käynnistetäänko WiFi?)
      |n  |y
      |   ------" net" (liitytäänkö olemassa oleaan verkkoon?)		
@@ -101,7 +101,7 @@ Poikkeuksena on avainnuksen pisteen ja viivan paikan vaihto. Siihen vastataan pa
      |
      |
   "3560"  (käyttö alkaa. Oletustaajuus 3.560Mhz)
-
+```
 #### Käyttö
 
 Kun VFO nuppia kierretään näytössä näkyy "3560"-> "3561" tai "3559" jne... Jos askellus on 1000Hz.
@@ -229,7 +229,7 @@ All the necessary components for Forty, DDS, ESP, Arduino Nano, 7seg display, TD
 
 Different texts will flash on the screen. Options are selected with the attached keyer (2-pole). The  answer is "yes" when both pads are pressed down. "No" is just  doing nothing untill the next question.
 An exception is the swapping of paddles dit and dah. It is answer is done by pressing the pad that you want to use for dits. This is stored in eeprom together with the latest CW speed so they do not need to be set at each startup.
-
+```
     "F On" (is WiFi being started)
      | n | y
      |   ------ "net" (does it link to exist on the network?)
@@ -251,9 +251,7 @@ An exception is the swapping of paddles dit and dah. It is answer is done by pre
      |
      |
   "3560" (usage starts, Default frequency 3.560Mhz)
-
-
-
+```
 
 #### Usage
 
@@ -295,7 +293,6 @@ Only long commands are "dump_caps" and "dump_state", but they are more or less "
 
 
 Not rigctld commands are:
-
 	Z 		cut off WiFi (note!! the connection is lost!)
 	H 		set WiFi maximum power (may be cause a "woodpecker" to band)
 	P 		set WiF minimum power. The default is the maximum pwr. if a "woodpecker" exist dropping power may help.
