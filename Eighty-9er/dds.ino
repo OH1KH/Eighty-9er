@@ -10,6 +10,9 @@ void tfr_byte(byte data)
  // DDS frequency calc from datasheet page 8 = <sys clock> * <frequency tuning word>/2^32
 void sendFrequency(unsigned long frequency) {
 unsigned long k=0;
+
+if ( frequency > QRGmax ) { frequency = QRGmax; MyQrg = QRGmax;};
+if ( frequency < QRGmin ) { frequency = QRGmin; MyQrg = QRGmin;};
   
   if ( CWkey == 0) { //rx
      frequency = frequency+CWrit;
@@ -27,8 +30,7 @@ unsigned long k=0;
        k = frequency;
       }  
    }
-  if ( frequency > QRGmax ) { frequency = QRGmax; };
-  if ( frequency < QRGmin ) { frequency = QRGmin; };
+  
  
   int32_t freq = frequency * 4294967295/125000000;  // note 125 MHz clock on 9850
   for (int b=0; b<4; b++, freq>>=8) {
