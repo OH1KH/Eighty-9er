@@ -11,13 +11,14 @@
 //it's "rig" is "-m2" (rigctld) and  point it to rig-WiFi with proper IP address:
 //  rigctld -m2 --set-conf=rig_pathname=192.168.60.220:4532,timeout=3000 -vvvv
 
-
 #define CWFREQ 800       //tone of morse code (not used now) 
 #define CWmax 50	       //CW speed max and minimum wpm
 #define CWmin 5
 #define CWdef 18        //defaut speed of morse code in WPM (words per minute) 
 #define CWtail 500      // tail ms to keep xit in after last element sent
 #define CWritBase  700      //rit in Hz during rx (plain always added. Actually rx is rit up, displays TX freq)
+#define CWritMin -9000   // rit min and max
+#define CWritMax  9000
 #define MAXtxTime 120000 // max tx time via rigctld t1 (ms)
 
 #define QRGdef 3560000  //DDS default frequency

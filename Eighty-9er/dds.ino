@@ -86,18 +86,19 @@ void RotSteps(){
                     CWrit = CWrit + Step*10;
                     if (CWrit < -9000) CWrit =-9000;   //max & min values for rit
                     if (CWrit >  9000) CWrit = 9000;
+                    sendFrequency(MyQrg);             //set new rit in effect
                     if (CWrit>-999 ) showNumberDec(CWrit); else showNumberDec(CWrit/10); //4digits cant show negative under -999  
                     Step = 0;
                     lo = 0;
                     ritChange = true;
+                    ShowBase = millis()+upd7seg;
                     }
                   lo++;
                   delay(10);
                   }
                  if (ritChange) { //value has changed
-                  sendFrequency(MyQrg);
-                  ShowBase = millis()+upd7seg;
-                  //eewrite rit???
+                  eewint(4,CWrit);
+                  eesum();
                  }
                 RotStep = 10;
                 }; break;

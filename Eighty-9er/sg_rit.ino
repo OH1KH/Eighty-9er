@@ -17,6 +17,8 @@ void set_rit() {
          CWrit = Csp;
          rep = true;
          sendFrequency(MyQrg);
+         eewint(4,CWrit);
+         eesum(); 
         } 
     strcpy(Rcmd,"set_rit:");
     strcpy(Ritem,"Rit: ");

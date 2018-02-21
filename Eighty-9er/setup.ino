@@ -127,6 +127,8 @@ if (!both_pads(F("F on")))  wifi_off(); else WiFi.mode(WIFI_AP_STA);
     *  1 cwdit paddle
     *  2 cwdah paddle
     *  3 cwspeed
+    *  4 CWrit Hi
+    *  5 CWrit Lo
     */
    if (eestart()) {
      byte a = eerbyte(1);  // zero eeprom has checksum ok !!
@@ -140,6 +142,10 @@ if (!both_pads(F("F on")))  wifi_off(); else WiFi.mode(WIFI_AP_STA);
       }
       a = eerbyte(3);  
      if ((a >= CWmin) && (a <= CWmax)) cwSpeed = a; // must be in limits
+     
+     int r = eerint(4); // rit
+     if ((r >= CWritMin) && (r <= CWritMax)) CWrit = r; // must be in limits
+     
    }
    #ifdef DEBUG
    Serial.println(F("Read eeprom, done"));

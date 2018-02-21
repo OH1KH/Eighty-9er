@@ -112,10 +112,12 @@ nuppia kierretään. Näytöstä poistuu siis ylin "3" eli MHz säädön ajaksi.
 Jos askellus on 10Hz putoaa 2 ylintä numero pois säädön ajaksi. Siis "6000" -> "6001 tai "5999" jne...
 
 Askellusta muutetaan VFO nuppia painamalla. Rotary encoderissa toimii sulkukosketin painettaessa sisään.
-Askellus muuttuu oletuksesta 100Hz, näytössä: -> 1000 -> rit säätö jolloin näkyy oletusarvo 700 joka on muutettavissa nuppia kiertämällä 10 portain alueella -9000 .. +9000Hz. Kun säätöä ei tehdä 2 sekuntiin tulee näytölle 10, joka tarkoittaa että VFO askellus asettui samalla kertaa 10Hz.
-Jäleen seuraava painallus tuo näyttöön/askeleeksi 100. Tästä eteenpäin kierretään samaa 1000->rit/10->100 jne...
+Askellus muuttuu oletuksesta 100Hz, näytössä: -> 1000 -> rit säätö jolloin näkyy oletusarvo 700 (jota käytetään vain jos eeprmin arvo on rajojen ulkopuolella) joka on muutettavissa nuppia kiertämällä 10 portain alueella -9000 .. +9000Hz. Kun säätöä ei tehdä 2 sekuntiin tulee näytölle 10, joka tarkoittaa että VFO askellus asettui samalla kertaa 10Hz. Jos rit arvo muuttui se tallennetaan eepromille ja luetaan sieltä käynnistyksessä.
+
+Jälleen seuraava painallus tuo näyttöön/askeleeksi 100. Tästä eteenpäin kierretään samaa 1000->rit/10->100 jne...
 
 Lähetyksen aikana näyttöön tulee käytetty automaattiavaimen nopeus wpm:nä. Oletus on 18 (helposti muutettavissa). Kun palataan lähetyksetä kuunteluun näkyy ensin taajuuden vähiten merkitsevät numerot (jos askellus alle 1000) ja hetken kuluttua ne vaihtuvat eniten merkitseviin.
+
 Käytettäessä pumppuavainta näyttö pysyy taajuuden perusnäytöllä koko ajan.
 
 Rigctld komennoista toimivat:
@@ -127,7 +129,7 @@ Rigctld komennoista toimivat:
 	f		näytä taajuus (Hz)
 	F xxxxxxx	aseta taajuus (Hz 3500000 - 3700000)
 	j		näytä RX rit (Hz)
-	J xxxxx		aseta RX rit (-9000 - 9000)
+	J xxxxx		aseta RX rit (-9000 - 9000. Arvoa 0 ei voi käyttää. Käytä 1 sen sijaan)
 	m		näytä mode (aina CW )
 	M yy		aseta mode (vain CW kelpaa)
 	v		naytä VFO (aina VFOA)
@@ -270,10 +272,12 @@ When the adjustment is stopped, the four most significant digits are returned.
 If the step is 10Hz, two higes numbers are dropped out during adjustment. So display shows, "6000" -> "6001 or" 5999 "etc ...
 
 Press the VFO knob to change the step. The rotary encoder has closing contact when pressed.
-The step changes from the default to 100Hz, in the display: -> 1000 -> rit value to display. The default value is 700 which can be changed by rotating knob. The range is -9000 .. + 9000Hz with steps of 10. When no adjustment is made for 2 seconds, the display will show 10, which means that the VFO's step was set at 10Hz at the same go.
+The step changes from the default to 100Hz, in the display: -> 1000 -> rit value to display. The default value is 700 (that occurs only if eeprom read fails) which can be changed by rotating knob. The range is -9000 .. + 9000Hz with steps of 10. When no adjustment is made for 2 seconds, the display will show 10, which means that the VFO's step was set at 10Hz at the same go. If rit changed new value is written to eeprom and read from there at next startup.
+
 The next press will give the step and display of 100. From here on, the same 1000-> rit / 10-> 100 etc will be rotated ...
 
 During transmission, the iambic key speed will be displayed as wpm. The default is 18 (easily changeable). When returning to RX, the least significant numbers of the frequency (if a step is below 1000) are displayed first, and in a few moments they will change the most significant.
+
 When using the stright key, the display stays on the basic frequency display all the time.
 
 Rigctld commands that works are:
@@ -285,7 +289,7 @@ Rigctld commands that works are:
 	f 		display frequency (Hz)
 	F xxxxxxx 	set the frequency (Hz 3500000 to 3700000)
 	j 		show RX rit (Hz)
-	J xxxxx 	set RX rit (-9000 to 9000)
+	J xxxxx 	set RX rit (-9000 to 9000. Value 0 is invalid. Use 1 instead)
 	m 		show mode (always CW)
 	M yy 		set mode (only CW valid)
 	v 		show VFO (always VFOA)
