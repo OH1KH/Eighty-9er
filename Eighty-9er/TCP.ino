@@ -91,6 +91,6 @@ void writeCli() {
 
 //-------------------------------------------------------
 void showNumberDec(int a) {
-Serial.println(a);
+if (!serialHamlib ) Serial.println(a);
 }
 
